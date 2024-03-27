@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Document</title>
+  <style>
+    .rect{
+      width: 800px;
+      height: auto;
+      display: grid;
+      align-items: end;
+      padding: 0 0 40px;
+      margin: 0 auto;
+      aspect-ratio: 16/9;
+      border: 1px solid #c0c0c0;
+    }
+    .rect_inner{
+      width: 720px;
+      height: 160px;
+      margin: 0 auto;
+      border: 1px solid #c0c0c0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="rect">
+    <div class="rect_inner" data-clicked="">
+      こんにちは
+    </div>
+  </div>
+  <script>
+    let box = document.querySelector('.rect_inner');
+    clickCnt= 0;
+    box.addEventListener("click",function(){
+      clickCnt++;
+      console.log(clickCnt)
+      this.dataset.clicked=clickCnt;
+      if (this.dataset.clicked==="1"){
+        box.innerHTML="山に沢山の犬と猫がいた。<br>一緒に混ざって寝てたり、木の枝の上にいたり。<br>両側に犬だけのゾーンと猫だけのゾーンがあった。";
+      } else if (this.dataset.clicked==="2"){
+        box.innerHTML="なんか雰囲気が妙に落ち着いてて、何か悪いことが起こるような気がした。";
+      } else if (this.dataset.clicked==="3"){
+        box.innerHTML="しばらくして雨が降って土砂崩れが起こった。";
+      } else if (this.dataset.clicked==="4"){
+        box.innerHTML="犬と猫と地面が全部流されて消え、木の枝と根っこだけが残った。";
+      } else if (this.dataset.clicked==="5"){
+        box.innerHTML="自分は枝にしがみついていた。<br>木は山の高いところに生えていたが、下の地面が全部なくなってしまったので、木の上で孤立する形になった。";
+      } else if (this.dataset.clicked==="6"){
+        box.innerHTML="木の上から見下ろすと、下の方にも木があって、熱帯雨林の高木層と亜高木層くらいの差があった。";
+      } else if (this.dataset.clicked==="7"){
+        box.innerHTML="地面に到達するためには、枝から枝えうまく飛び移っていくしかなった";
+      }
+    })
+  </script>
+</body>
+</html>
